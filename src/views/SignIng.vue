@@ -34,7 +34,7 @@
             
             :class="{'Errorstyle': EmailErrorStyle && emailError }"
               v-model="Email"
-              class=" MedaiInput ml-2 pl-6 border-[2.5px] border-Grey/40 font-bold h-12 rounded-md"
+              class=" MedaiInput ml-2 pl-6 border-[2.5px] border-Grey/40 focus:bg-white focus:border-Grey/40 font-bold h-12 rounded-md"
               type="emial"
               required
               placeholder="email@company.com"
@@ -46,7 +46,7 @@
             :disabled="disabled"
               @click="toggleModel"
               :is-loading="isLoading"
-              class="MedaiButton ml-2 py-2 text-center text-White bg-Charcoal_Grey rounded-md hover:bg-Tomato"
+              class="MedaiButton ml-2 py-2 text-center text-White bg-Charcoal_Grey  rounded-md hover:bg-Tomato"
             >
               Subscribe to monthly newsLetter
             </LoadingButton>
@@ -76,7 +76,7 @@ const emailError = ref('')
 
 const toggleModel = () => {
   const isValidEmail = (Email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex =/^[^\s@]+@[^\s@]+\.com+$/;
   
     return emailRegex.test(Email);
   };
@@ -117,5 +117,7 @@ const EmailErrorStyle = computed(() => {
   color: rgba(224, 111, 91, 0.828);
   outline-color: rgba(175, 5, 5, 0.342);
 }
+
+
 
 </style>
